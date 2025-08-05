@@ -8,33 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 99%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Trustworthy blue primary */
+    --primary: 200 95% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 200 95% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light gray secondary */
+    --secondary: 210 10% 96%;
+    --secondary-foreground: 220 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 10% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Green accent for positive actions */
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 142 70% 38%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Orange for warnings/urgent */
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 200 95% 42%;
 
     --radius: 0.5rem;
 
@@ -100,6 +109,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  /* Typography for accessibility */
+  .text-heading-lg {
+    @apply text-xl md:text-2xl font-semibold leading-tight;
+  }
+
+  .text-heading-md {
+    @apply text-lg md:text-xl font-medium leading-snug;
+  }
+
+  .text-body-lg {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-sm md:text-base leading-relaxed;
+  }
+
+  /* Large touch-friendly buttons */
+  .btn-large {
+    @apply min-h-[56px] px-6 text-base font-medium rounded-lg;
+  }
+
+  .btn-icon-large {
+    @apply w-12 h-12 rounded-lg;
   }
 }
